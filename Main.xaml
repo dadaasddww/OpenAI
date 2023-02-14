@@ -5,15 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenAI_API"
         mc:Ignorable="d"
-        Title="Main" Height="250" Width="400" Icon="/Icon1.ico" >
-    <Grid>
+        Title="Main" Height="590" Width="710"  >
+    <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Margin ="10">
-            <Button x:Name="Button_chat" Content="Chat" Height="50" Width="80" Margin="5" Click="Button_chat_Click"></Button>
-            <Button x:Name="Button_image" Content="Image" Height="50" Width="80" Margin="5" Click="Button_image_Click" ></Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical"  Margin ="3">
+            <Button x:Name="Button_chat" Margin="3" Content="Chat" Click="Button_chat_Click"></Button>
+            <Button x:Name="Button_image" Margin="3" Content="Image"  Click="Button_image_Click" ></Button>
         </StackPanel>
+        <Frame x:Name="MainFrame" Grid.Column="1" NavigationUIVisibility="Hidden"  Background="AntiqueWhite"/>
     </Grid>
 </Window>

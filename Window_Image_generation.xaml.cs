@@ -30,14 +30,14 @@ namespace OpenAI_API
     /// <summary>
     /// Window_Image_generation.xaml 的交互逻辑
     /// </summary>
-    public partial class Window_Image_generation : Window
+    public partial class Window_Image_generation : Page
     {
         int Index = 0;
         public Window_Image_generation()
         {
             InitializeComponent();
-            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            initrr.main.Visibility = Visibility.Hidden;
+            //this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //initrr.main.Visibility = Visibility.Hidden;
         }
 
         private void Button_down_Click(object sender, RoutedEventArgs e)

@@ -1,11 +1,11 @@
-﻿<Window x:Class="OpenAI_API.WindowChat"
+﻿<Page x:Class="OpenAI_API.WindowChat"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenAI_API"
         mc:Ignorable="d"
-        Title="WindowChat" Height="550" Width="600" Closed="Window_Closed">
+        Title="WindowChat" Height="540" Width="620" >
     <Grid>
 
         <Grid.RowDefinitions>
@@ -13,12 +13,12 @@
             <RowDefinition Height="180"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Background="#FFE5EEEE" Margin="5" Grid.Row="1">
-            <TextBox x:Name="TextBox_input" Width="450" Margin="5" Text="请用C#生成一个WPF的聊天界面"  Height="150" PreviewKeyDown="TextBox_input_PreviewKeyDown"></TextBox>
+        <DockPanel Background="#FFE5EEEE" Margin="0" Grid.Row="1" LastChildFill="True">
             <Button x:Name="Button_OK" Width="50" Margin="5" Content="发送" VerticalAlignment="Center" Height="50" Click="Button_OK_Click"></Button>
             <Button x:Name="Button_clean" Width="50" Margin="5" Content="清空" VerticalAlignment="Center" Height="50" Click="Button_clean_Click" ></Button>
-        </StackPanel>
-        <DockPanel  Background="#FFABAEAE" Margin="5" Grid.Row="2">
+            <TextBox x:Name="TextBox_input" Margin="5" AcceptsReturn="True" TextWrapping="Wrap" Text="请用C#生成一个WPF的聊天界面"   PreviewKeyDown="TextBox_input_PreviewKeyDown" ></TextBox>
+        </DockPanel>
+        <DockPanel  Background="#FFABAEAE" Margin="0" Grid.Row="2">
             <TextBox x:Name="TextBox_return" Margin="5"  AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBox>
         </DockPanel>
         <Menu  Background="#FFD9D2D2">
@@ -26,7 +26,7 @@
                 <MenuItem Name="MenuItem_朗读" Header="朗读" Click="MenuItem_Click"></MenuItem>
                 <MenuItem Name="MenuItem_停止" Header="停止朗读" Click="MenuItem_停止_Click"></MenuItem>
             </MenuItem>
-            
+
         </Menu>
     </Grid>
-</Window>
+</Page>

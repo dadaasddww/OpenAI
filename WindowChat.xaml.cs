@@ -22,15 +22,15 @@ namespace OpenAI_API
     /// <summary>
     /// WindowChat.xaml 的交互逻辑
     /// </summary>
-    public partial class WindowChat : Window
+    public partial class WindowChat : Page
     {
         SpeechSynthesizer synthesizer;
         public WindowChat()
         {
             InitializeComponent();
             TextBox_input.Focus();
-            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            initrr.main.Visibility = Visibility.Hidden;
+            //this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //initrr.main.Visibility = Visibility.Hidden;
             synthesizer = new SpeechSynthesizer();
             synthesizer.Rate = 2;//-10到10
             var tts1 = synthesizer.GetInstalledVoices();

@@ -19,29 +19,48 @@ namespace OpenAI_API
     /// </summary>
     public partial class Main : Window
     {
+
+        public WindowChat chat;
+        public Window_Image_generation Image_generation;
+
         public Main()
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             initrr.main = this;
+            chat = new WindowChat();
+            MainFrame.Content = chat;
         }
 
         private void Button_chat_Click(object sender, RoutedEventArgs e)
         {
-           
-            var c = new WindowChat();
-            
-            c.ShowDialog();
-            
+            if (chat == null)
+            {
+                chat = new WindowChat();
+                MainFrame.Content = chat;
+            }
+            else
+            {
+                MainFrame.Content = chat;
+            }
+
+
         }
 
         private void Button_image_Click(object sender, RoutedEventArgs e)
         {
-           
-            var c = new Window_Image_generation();
-            
-            c.ShowDialog();
-            
+
+            if (Image_generation == null)
+            {
+                Image_generation = new Window_Image_generation();
+                MainFrame.Content = Image_generation;
+            }
+            else
+            {
+                MainFrame.Content = Image_generation;
+            }
+
+
         }
     }
 }
