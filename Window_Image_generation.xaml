@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenAI_API"
         mc:Ignorable="d"
-        Title="Window_Image_generation" Height="540" Width="620" >
+        Title="Window_Image_generation" Margin="3"  >
+    <DockPanel>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
@@ -21,4 +22,5 @@
             <Image x:Name="Image1" Margin="5" Stretch="Uniform"></Image>
         </DockPanel>
     </Grid>
+    </DockPanel>
 </Page>

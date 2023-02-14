@@ -1,0 +1,3 @@
+﻿2023.02.14
+	1、增加Main中全局变量chat和Image_generation保证切换Frame的切换不改变原有Page中的内容
+	2、删除两个Page中的 Height="540" Width="620" 属性，增加顶级DockPanel布局和 Margin 属性保证窗体大小变化时动态大小

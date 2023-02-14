@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenAI_API"
         mc:Ignorable="d"
-        Title="WindowChat" Height="540" Width="620" >
+        Title="WindowChat" Margin="3" >
+    <!--Height="540" Width="620"-->
+    <DockPanel>
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
             <RowDefinition Height="180"></RowDefinition>
@@ -29,4 +30,5 @@
 
         </Menu>
     </Grid>
+    </DockPanel>
 </Page>
