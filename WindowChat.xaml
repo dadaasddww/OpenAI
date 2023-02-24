@@ -15,8 +15,12 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <DockPanel Background="#FFE5EEEE" Margin="0" Grid.Row="1" LastChildFill="True">
-            <Button x:Name="Button_OK" Width="50" Margin="5" Content="发送" VerticalAlignment="Center" Height="50" Click="Button_OK_Click"></Button>
-            <Button x:Name="Button_clean" Width="50" Margin="5" Content="清空" VerticalAlignment="Center" Height="50" Click="Button_clean_Click" ></Button>
+                <StackPanel Width="200">
+                    <Button x:Name="Button_OK" Width="100" Margin="5" Content="发送" VerticalAlignment="Center" Height="30" Click="Button_OK_Click"></Button>
+                    <Button x:Name="Button_clean" Width="100" Margin="5" Content="清空" VerticalAlignment="Center" Height="30" Click="Button_clean_Click" ></Button>
+                    <ComboBox x:Name="ComboBox1"></ComboBox>
+                </StackPanel>
+            
             <TextBox x:Name="TextBox_input" Margin="5" AcceptsReturn="True" TextWrapping="Wrap" Text="请用C#生成一个WPF的聊天界面"   PreviewKeyDown="TextBox_input_PreviewKeyDown" ></TextBox>
         </DockPanel>
         <DockPanel  Background="#FFABAEAE" Margin="0" Grid.Row="2">

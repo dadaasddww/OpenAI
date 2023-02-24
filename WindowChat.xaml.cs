@@ -1,24 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Speech.Synthesis;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using OpenAI.GPT3.Managers;
-using OpenAI.GPT3.ObjectModels.RequestModels;
-using OpenAI.GPT3.ObjectModels;
 using OpenAI.GPT3;
-using System.Speech.Synthesis;
+using OpenAI.GPT3.Managers;
+using OpenAI.GPT3.ObjectModels;
+using OpenAI.GPT3.ObjectModels.RequestModels;
 
-namespace OpenAI_API
-{
+namespace OpenAI_API {
     /// <summary>
     /// WindowChat.xaml 的交互逻辑
     /// </summary>
@@ -34,6 +22,17 @@ namespace OpenAI_API
             synthesizer = new SpeechSynthesizer();
             synthesizer.Rate = 2;//-10到10
             var tts1 = synthesizer.GetInstalledVoices();
+
+            ComboBox1.ItemsSource = new List<string>(){
+                "Ada","Babbage","Curie","Davinci","TextAdaV1","TextBabbageV1","TextCurieV1","TextDavinciV1","TextDavinciV2","TextDavinciV3",
+                "CurieInstructBeta","DavinciInstructBeta","CurieSimilarityFast","TextSimilarityAdaV1","TextSimilarityBabbageV1","TextSimilarityCurieV1",
+                "TextSimilarityDavinciV1","TextSearchAdaDocV1","TextSearchBabbageDocV1","TextSearchCurieDocV1","TextSearchDavinciDocV1",
+                "TextSearchAdaQueryV1","TextSearchBabbageQueryV1","TextSearchCurieQueryV1","TextSearchDavinciQueryV1","TextEditDavinciV1",
+                "CodeEditDavinciV1","CodeSearchAdaCodeV1","CodeSearchBabbageCodeV1","CodeSearchAdaTextV1","CodeSearchBabbageTextV1","CodeDavinciV1","CodeCushmanV1","CodeDavinciV2"
+            };
+
+            ComboBox1.SelectedIndex = 9;
+
 
         }
 
@@ -53,31 +52,44 @@ namespace OpenAI_API
         {
             this.Button_OK.Content = "发送中……";
             //https://www.cnblogs.com/qsnn/p/17058303.html
-            OpenAIService service = new OpenAIService(new OpenAiOptions() { ApiKey = initrr.OPENAPI_TOKEN });
+            OpenAIService service = new OpenAIService(new OpenAiOptions() { ApiKey = initrr.OPENAPI_TOKEN});
             CompletionCreateRequest createRequest = new CompletionCreateRequest()
             {
+                User = "sally1",
                 Prompt = TextBox_input.Text.Trim(),
-                Temperature = 0.3f,
+                Temperature = 0.8f,
                 MaxTokens = 2048,
                 TopP = 1,
                 FrequencyPenalty = 0,
                 PresencePenalty = 0.6f,
                 //Stop = "停止stop",
                 N = 1
+                
+                
+
             };
-
-            var res = await service.Completions.CreateCompletion(createRequest, Models.TextDavinciV3);
-
-            if (res.Successful)
+            try
             {
-                TextBox_return.Text = res.Choices.FirstOrDefault().Text;
-            }
-            else
+                var a = ComboBox1.SelectedIndex;
+  
+                var c = Models.EnumToString((Models.Model)a);
 
-            {
-                System.Windows.Forms.MessageBox.Show("生成错误");
+               var res = await service.Completions.CreateCompletion(createRequest, c);
+                if (res.Successful)
+                {
+                    TextBox_return.Text = res.Choices.FirstOrDefault().Text;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("生成错误");
+                }
+                this.Button_OK.Content = "发送";
             }
-            this.Button_OK.Content = "发送";
+            catch (Exception)
+            {
+                TextBox_return.Text = "出错了";
+                this.Button_OK.Content = "发送";
+            }
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -105,9 +117,7 @@ namespace OpenAI_API
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-
             synthesizer.SetOutputToDefaultAudioDevice();
-
             this.Cursor = System.Windows.Input.Cursors.Wait;
             synthesizer.SpeakAsync(TextBox_return.Text);
             this.Cursor = System.Windows.Input.Cursors.Arrow;

@@ -18,9 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Betalgo.OpenAI.GPT3" Version="6.6.6" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
-    <PackageReference Include="System.Speech" Version="7.0.0" />
+    <PackageReference Include="Baidu.AI" Version="4.15.12" />
+    <PackageReference Include="Betalgo.OpenAI.GPT3" Version="6.6.7" />
+    <PackageReference Include="DocX" Version="2.4.0" />
+    <PackageReference Include="linq2db.SQLite" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.1.23110.8" />
+    <PackageReference Include="Stub.System.Data.SQLite.Core.NetFramework" Version="1.0.117" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
+    <PackageReference Include="System.Speech" Version="8.0.0-preview.1.23110.8" />
   </ItemGroup>
 
   <ItemGroup>

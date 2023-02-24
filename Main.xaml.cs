@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Speech.Synthesis;
+using Xceed.Words.NET;
+using OpenAI_API.PageFrom;
+
 namespace OpenAI_API
 {
     /// <summary>
@@ -22,6 +25,8 @@ namespace OpenAI_API
 
         public WindowChat chat;
         public Window_Image_generation Image_generation;
+        public PageDOCX Docx;
+        public Baidu_speech_recognition baidu;
 
         public Main()
         {
@@ -61,6 +66,29 @@ namespace OpenAI_API
             }
 
 
+        }
+
+        private void Button_Docx_Click(object sender, RoutedEventArgs e)
+        {
+            if (Docx == null)
+            {
+                Docx = new PageDOCX();
+                MainFrame.Content = Docx;
+            }
+            else
+            {
+                MainFrame.Content = Docx;
+            }
+        }
+
+        private void Button_Baidu_Click(object sender, RoutedEventArgs e) {
+            if (baidu == null) {
+                baidu = new Baidu_speech_recognition();
+                MainFrame.Content = baidu;
+            }
+            else {
+                MainFrame.Content = baidu;
+            }
         }
     }
 }

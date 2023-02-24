@@ -11,12 +11,14 @@
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.15*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical"  Margin ="3">
             <Button x:Name="Button_chat" Margin="3" Content="Chat" Click="Button_chat_Click"></Button>
             <Button x:Name="Button_image" Margin="3" Content="Image"  Click="Button_image_Click" ></Button>
+            <Button x:Name="Button_Docx" Margin="3" Content="Docx"  Click="Button_Docx_Click" ></Button>
+            <Button x:Name="Button_Baidu" Margin="3" Content="Baiduspeech"  Click="Button_Baidu_Click" ></Button>
         </StackPanel>
         <Frame x:Name="MainFrame" Grid.Column="1" NavigationUIVisibility="Hidden"  Background="AntiqueWhite"/>
     </Grid>
