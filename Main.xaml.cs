@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Speech.Synthesis;
-using Xceed.Words.NET;
+//using Xceed.Words.NET;
 using OpenAI_API.PageFrom;
 
 namespace OpenAI_API

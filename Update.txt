@@ -16,3 +16,5 @@
 		  findID INTEGER,
 		  fileName TEXT,
 		  beizhu TEXT);
+2023.02.24
+	1、增加百度语音识别Page 暂时不能用

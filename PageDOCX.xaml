@@ -25,7 +25,7 @@
                 <TextBox x:Name="TextBox_file" Text="E:\word文档" Width="200" />
                 <TextBox x:Name="TextBox_find" Text="沃卡" Width="150" />
                 <Button Content="查找"  x:Name="Button_查找" Margin="2"  Padding="2" Click="Button_查找_Click" ></Button>
-                <Label Name="Lable1" Margin="2"  Padding="2" Width="100" VerticalContentAlignment="Center" ></Label>
+                <Label Name="Lable1" Margin="2"  Padding="2" Width="250" VerticalContentAlignment="Center" ></Label>
                 <ComboBox x:Name="ComboBox_history" Width="80" SelectionChanged="ComboBox_history_SelectionChanged"/>
             </StackPanel>
 
